@@ -1,0 +1,125 @@
+---
+title: Le Wagon Middleman boilerplate
+---
+
+<div id="band" class="container text-center">
+  <h3>THE BAND</h3>
+  <p><em>We love music!</em></p>
+  <p>Very found of the 90's, but not only, S_LDØUT comes from the HxC scene. Pi Pow hits the drums like hell!!! He has played in many bands in France and Canada. Very interested in what's from the underground, he came naturally to the kind of band which is not a proper one. Only two people!!! Joan krugg is the other hand of this Duo. He grinds the strings more than he pulls them... who cares? These two guys believe in good shows how much the energy is conveyed to the audience... Enjoy a full stage with them and experiment S_LDØUT!</p>
+  <div class="row">
+    <div class="col-sm-4">
+      <p><strong>Pi Pow</strong></p><br>
+      <a href="#demo" data-toggle="collapse">
+      <%= image_tag "pipowsurf.JPG", class: "img-circle person" %>
+      </a>
+      <div id="demo" class="collapse">
+      <p>Drummer & Back Vocalist</p>
+      <p>Loves weed and drumming</p>
+      <p>Member since 2016</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <p><strong>Instruments</strong></p><br>
+      <a href="#demo2" data-toggle="collapse">
+      <%= image_tag "Stage.jpg", class: "img-circle person" %>
+      </a>
+      <div id="demo2" class="collapse">
+      <p>Basics</p>
+      <p>Members since the 90's</p>
+    </div>
+    </div>
+    <div class="col-sm-4">
+      <p><strong>Joan Krugg</strong></p><br>
+      <a href="#demo3" data-toggle="collapse">
+      <%= image_tag "jkbeer.JPG", class: "img-circle person" %>
+      </a>
+      <div id="demo3" class="collapse">
+      <p>Guitar player & Lead Vocalist</p>
+      <p>Loves math and beer</p>
+      <p>Member since 2016</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-1">
+  <div id="tour" class="container">
+    <h3 class="text-center">TOUR DATES</h3>
+    <p class="text-center">Sure we'll play fuckin' loud.<br> Remember to bring your fun</p>
+
+    <ul class="list-group">
+      <li class="list-group-item">MARCH <span class="label label-danger">Sold Out!</li>
+      <li class="list-group-item">APRIL <span class="label label-danger"> Sold Out!</li>
+      <li class="list-group-item">MAY <span class="badge">3</li>
+    </ul>
+    <div class="row text-center">
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <%= image_tag "angou.jpg"%>
+          <p><strong>Angoulême</strong></p>
+          <p>Fri. 14 April 2017</p>
+          <button class="btn" data-toggle="modal" data-target="#myModal" >Here?</button>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <%= image_tag "angou.jpg"%>
+          <p><strong>Siradan</strong></p>
+          <p>Fri. 21 April 2017</p>
+          <button class="btn" data-toggle="modal" data-target="#myModal" >Here?</button>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <%= image_tag "angou.jpg"%>
+          <p><strong>Bordeaux</strong></p>
+          <p>Fri. 19 May 2017</p>
+          <button class="btn" data-toggle="modal" data-target="#myModal" >Here?</button>
+      </div>
+    </div>
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4><span class="glyphicon glyphicon-lock"></span> Tickets</h4>
+          </div>
+          <div class="modal-body">
+            <form role="form">
+              <div class="form-group">
+                <label for="psw"><span class="glyphicon glyphicon-shopping-cart"></span> Tickets, $23 per person</label>
+                <input type="number" class="form-control" id="psw" placeholder="How many?">
+              </div>
+              <div class="form-group">
+                <label for="usrname"><span class="glyphicon glyphicon-user"></span> Send To</label>
+                <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+              </div>
+              <button type="submit" class="btn btn-block">Pay
+                <span class="glyphicon glyphicon-ok"></span>
+              </button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+              <span class="glyphicon glyphicon-remove"></span> Cancel
+            </button>
+            <p>Need <a href="#">help?</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Add Google Maps -->
+  <div id="googleMap"></div>
+  <script>
+  function myMap() {
+  var myCenter = new google.maps.LatLng(44.833328, -0.56667);
+  var mapProp = {center:myCenter, zoom:12, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
+  var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+  var marker = new google.maps.Marker({position:myCenter});
+  marker.setMap(map);
+  }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVgfeWHV8FxLtURHRmOtXiisx4AM-M-Uw&callback=myMap"></script>
+</div>
